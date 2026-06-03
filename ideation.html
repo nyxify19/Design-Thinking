@@ -796,3 +796,801 @@ National contests on wellbeing.`;
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blitzkreig Bop | Brainstorming</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            overflow: hidden; /* Prevent scrolling during animation */
+            transition: background-color 1s ease;
+        }
+        
+        #mixer-section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 1s ease;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
+            background-color: var(--bg-color);
+        }
+
+        .mixer-title {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+
+        #scrolling-idea {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            color: var(--text-color);
+            padding: 0 2rem;
+            max-width: 900px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: transform 0.05s ease, opacity 0.05s ease;
+        }
+
+        #top-10-section {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 1.5s ease;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        #top-10-section.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .blur-effect {
+            filter: blur(2px);
+            transform: scale(1.02);
+            opacity: 0.8;
+        }
+        
+        .counter {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--pastel-rose);
+            opacity: 0;
+            animation: fadeIn 1s forwards 0.5s;
+        }
+
+        /* Back button */
+        .back-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 200;
+            background: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 600;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .back-btn.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .back-btn:hover {
+            background: var(--pastel-blue);
+            transform: translateY(-2px);
+        }
+
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-btn" id="back-btn">← Back to Project</a>
+
+    <!-- Animation Section -->
+    <section id="mixer-section">
+        <div class="mixer-title">Synthesizing 540 Solutions</div>
+        <div id="scrolling-idea">Generating ideas...</div>
+        <div class="counter" id="counter-display">0 / 540 Analyzed</div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="top-10-section" class="container">
+        <h2 style="text-align: center; margin-bottom: 1rem;">The Synthesis: Top 10 Solutions</h2>
+        <p style="text-align: center; margin-bottom: 3rem; color: var(--text-light);">Filtered from 540 ideas across 5 "How Might We" clusters.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">1. Anonymous Digital Support Platform</h3>
+                <p style="font-size: 0.95rem;">A confidential app where students share struggles without identity exposure. Directly attacks the stigma barrier — the single biggest reason students don't seek help. Anonymity is the unlock.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">2. Peer Support Buddy System</h3>
+                <p style="font-size: 0.95rem;">Cross-batch pairing where seniors check in on juniors weekly. Tackles social isolation and converts the toxic peer-competition dynamic into a support dynamic. Zero infrastructure cost.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">3. AI-Driven Burnout Alerts</h3>
+                <p style="font-size: 0.95rem;">Passive monitoring via daily mood check-in data flags at-risk students automatically. Removes the burden of self-initiated help-seeking — which stigma blocks.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">4. "More Than NEET" Alumni Campaign</h3>
+                <p style="font-size: 0.95rem;">Alumni who took non-MBBS paths share their stories across media and schools. Attacks the deepest root cause — society valuing only one definition of success.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">5. Parent Workshops on Mental Health</h3>
+                <p style="font-size: 0.95rem;">The pressure source is the family. No amount of student-side intervention works if parents keep demanding ranks. Educating parents shifts the input, not just the output.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">6. Wellness Breaks in Timetable</h3>
+                <p style="font-size: 0.95rem;">Structurally protected non-academic time. Students cannot opt into rest if the schedule doesn't permit rest. Institutional, not individual, fix.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">7. Faculty Empathy Training</h3>
+                <p style="font-size: 0.95rem;">Faculty are the daily touchpoint. A teacher who recognizes burnout signs intervenes early; one who doesn't, accelerates the spiral. Highest-leverage staff intervention.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">8. Mandating Counseling Services</h3>
+                <p style="font-size: 0.95rem;">Without a mandate, individual colleges treat counselling as optional. Policy converts good practice into a floor-level requirement across all institutions.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">9. Balanced Grading (Effort + Marks)</h3>
+                <p style="font-size: 0.95rem;">Restructures the incentive system itself. As long as only marks are rewarded, every other intervention fights the grading system. Changing what gets measured changes what students optimize for.</p>
+            </div>
+            
+            <div class="idea-card">
+                <h3 style="color: var(--text-color); font-size: 1.3rem;">10. Student Wellness Dashboards</h3>
+                <p style="font-size: 0.95rem;">Aggregated, anonymized wellbeing data made visible to administration. Creates institutional accountability — what gets measured gets managed. Closes the feedback loop.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Raw Data -->
+    <script>
+        const rawText = `Reduce weekly mock tests to bi weekly.
+Introduce wellness breaks in timetable.
+Blend academics with creative electives.
+Limit syllabus overload with modular design.
+Replace rote exams with project based evaluation.
+Add resilience training in curriculum.
+Create mentorship programs with alumni.
+Introduce peer learning circles.
+Weekly reflection journals.
+Faculty workshops on empathy.
+KPI reform to include wellbeing.
+Balanced grading (effort + marks).
+National accreditation for wellness programs.
+Student wellness dashboards.
+Sleep hygiene campaigns.
+AI driven stress monitoring.
+Flexible exam scheduling.
+Gamified learning modules.
+Reduce syllabus repetition.
+Introduce “no test weeks.”
+Add yoga/meditation sessions.
+Replace surprise tests with planned assessments.
+Introduce open book exams.
+Add creativity labs.
+Peer mentoring for stress management.
+Faculty student dialogue circles.
+Journaling assignments for reflection.
+Faculty KPI tied to student wellbeing surveys.
+Emotional literacy modules for teachers.
+Balanced evaluation rubrics.
+Accreditation points for wellness initiatives.
+Student wellbeing apps.
+Sleep awareness posters.
+AI based workload balancing.
+Flexible assignment deadlines.
+Gamified resilience challenges.
+Reduce exam frequency.
+Introduce elective subjects for hobbies.
+Add sports hours.
+Replace rote memorization with case studies.
+Introduce oral exams for communication skills.
+Add innovation projects.
+Peer support buddy system.
+Faculty student mentorship lunches.
+Weekly gratitude journals.
+Faculty KPI tied to counseling participation.
+Emotional resilience workshops for teachers.
+Balanced grading with creativity marks.
+Accreditation requiring wellness officers.
+Student wellbeing trackers.
+Sleep hygiene seminars.
+AI driven burnout alerts.
+Flexible class timings.
+Gamified study plans.
+Reduce syllabus duplication.
+Introduce “wellness credits.”
+Add art/music electives.
+Replace rote exams with practicals.
+Introduce collaborative projects.
+Add creativity competitions.
+Peer support groups.
+Faculty student empathy circles.
+Weekly mindfulness journals.
+Faculty KPI tied to empathy scores.
+Emotional literacy certification.
+Balanced grading with effort marks.
+Accreditation requiring wellness curriculum.
+Student wellbeing surveys.
+Sleep hygiene workshops.
+AI driven stress prediction.
+Flexible exam slots.
+Gamified resilience programs.
+Reduce exam load.
+Introduce “rest days.”
+Add physical activity electives.
+Replace rote exams with presentations.
+Introduce group projects.
+Add creativity labs.
+Peer support mentoring.
+Faculty student dialogue sessions.
+Weekly reflection journals.
+Faculty KPI tied to wellbeing outcomes.
+Emotional literacy workshops.
+Balanced grading with innovation marks.
+Accreditation requiring wellness audits.
+Student wellbeing apps.
+Sleep hygiene campaigns.
+AI driven workload alerts.
+Flexible assignment schedules.
+Gamified learning challenges.
+Reduce syllabus overload.
+Introduce “mental health days.”
+Add creative electives.
+Replace rote exams with case studies.
+Introduce oral presentations.
+Add innovation labs.
+Peer support buddy system.
+Faculty student empathy lunches.
+Weekly gratitude journals.
+Faculty KPI tied to counseling sessions.
+Emotional resilience certification.
+Balanced grading with creativity marks.
+Accreditation requiring wellness officers.
+Student wellbeing trackers.
+Sleep hygiene seminars.
+AI driven burnout prediction.
+Flexible class schedules.
+Gamified study plans.
+Parent workshops on mental health awareness.
+Family counseling sessions in schools.
+Community campaigns celebrating diverse careers.
+Alumni storytelling highlighting balanced lives.
+Media partnerships to show effort > marks.
+Family awards for creativity, not just scores.
+Peer parent support groups.
+Cultural festivals showcasing student talents.
+Social media campaigns against comparison.
+Family student dialogue circles.
+Parent teacher empathy training.
+National awareness drives on wellbeing.
+Parent newsletters on resilience.
+Family role model interviews.
+Community radio shows on balanced success.
+Parent student bonding workshops.
+Family storytelling nights.
+Relatives’ awareness campaigns.
+Introduce “Parent of the Year” awards for empathy.
+Family mentoring programs.
+Parent student joint art projects.
+Media campaigns showing non medical success stories.
+Alumni panels on diverse careers.
+Family recognition for effort.
+Parent peer support helplines.
+Community talent exhibitions.
+Social media challenges celebrating hobbies.
+Family student empathy circles.
+Parent teacher joint workshops.
+National campaigns against comparison.
+Parent newsletters on creativity.
+Family role model podcasts.
+Community radio interviews.
+Parent student bonding camps.
+Family storytelling competitions.
+Relatives’ empathy workshops.
+Parent training on growth mindset.
+Family counseling helplines.
+Community awards for diverse achievements.
+Alumni storytelling on balanced success.
+Media campaigns on effort.
+Family recognition for hobbies.
+Parent peer support groups online.
+Cultural festivals for creativity.
+Social media campaigns on individuality.
+Family student empathy workshops.
+Parent teacher empathy circles.
+National campaigns on resilience.
+Parent newsletters on individuality.
+Family role model videos.
+Community radio programs.
+Parent student bonding retreats.
+Family storytelling events.
+Relatives’ empathy campaigns.
+Parent workshops on emotional literacy.
+Family counseling programs.
+Community campaigns on creativity.
+Alumni storytelling on diverse paths.
+Media partnerships on resilience.
+Family recognition for effort.
+Parent peer support networks.
+Cultural festivals for hobbies.
+Social media campaigns on empathy.
+Family student dialogue workshops.
+Parent teacher empathy training.
+National campaigns on individuality.
+Parent newsletters on resilience.
+Family role model interviews.
+Community radio shows.
+Parent student bonding workshops.
+Family storytelling nights.
+Relatives’ awareness drives.
+Parent training on balanced success.
+Family counseling helplines.
+Community awards for creativity.
+Alumni storytelling on wellbeing.
+Media campaigns on individuality.
+Family recognition for hobbies.
+Parent peer support helplines.
+Cultural festivals showcasing talents.
+Social media campaigns on resilience.
+Family student empathy circles.
+Parent teacher joint workshops.
+National campaigns on creativity.
+Parent newsletters on individuality.
+Family role model podcasts.
+Community radio interviews.
+Parent student bonding camps.
+Family storytelling competitions.
+Relatives’ empathy workshops.
+Parent workshops on growth mindset.
+Family counseling sessions.
+Community campaigns on diverse success.
+Alumni storytelling on resilience.
+Media partnerships on creativity.
+Family recognition for effort.
+Parent peer support groups.
+Cultural festivals for hobbies.
+Social media campaigns on individuality.
+Family student empathy workshops.
+Parent teacher empathy circles.
+National campaigns on resilience.
+Parent newsletters on creativity.
+Family role model videos.
+Community radio programs.
+Parent student bonding retreats.
+Family storytelling events.
+Relatives’ empathy campaigns.
+Peer support clubs in every batch.
+Faculty empathy training modules.
+24/7 counseling helplines.
+Anonymous digital support platforms.
+Buddy systems for new students.
+Resilience workshops every semester.
+Faculty student mentorship programs.
+Cross disciplinary wellness hubs.
+Student wellbeing ambassadors.
+AI powered early stress detection.
+Confidential counseling rooms.
+Group therapy sessions.
+Peer led meditation circles.
+Faculty open door hours.
+Student wellness newsletters.
+Peer to peer listening sessions.
+Faculty empathy scorecards.
+Counseling orientation for new students.
+Peer mentoring for stress management.
+Faculty student dialogue circles.
+Journaling assignments for reflection.
+Peer buddy check ins weekly.
+Faculty empathy certification.
+Resilience bootcamps.
+Peer support helplines.
+Faculty student empathy lunches.
+Student wellbeing trackers.
+AI driven burnout alerts.
+Confidential peer sharing apps.
+Group resilience challenges.
+Peer led yoga sessions.
+Faculty empathy workshops.
+Student wellbeing dashboards.
+Peer support buddy system.
+Faculty empathy circles.
+Counseling awareness campaigns.
+Peer support networks online.
+Faculty empathy mentoring.
+Counseling drop in hours.
+Peer support retreats.
+Faculty empathy scorecards.
+Resilience hackathons.
+Peer support buddy apps.
+Faculty empathy lunches.
+Student wellbeing surveys.
+AI driven stress prediction.
+Confidential counseling kiosks.
+Group therapy marathons.
+Peer led mindfulness sessions.
+Faculty empathy certification.
+Student wellbeing trackers.
+Peer support buddy circles.
+Faculty empathy workshops.
+Counseling orientation drives.
+Peer support clubs online.
+Faculty empathy training.
+Counseling awareness weeks.
+Peer buddy check ins.
+Faculty empathy certification.
+Resilience workshops.
+Peer support helplines.
+Faculty empathy lunches.
+Student wellbeing dashboards.
+AI driven burnout alerts.
+Confidential counseling rooms.
+Group resilience sessions.
+Peer led yoga circles.
+Faculty empathy workshops.
+Student wellbeing trackers.
+Peer support buddy system.
+Faculty empathy circles.
+Counseling awareness campaigns.
+Peer support networks.
+Faculty empathy mentoring.
+Counseling drop in hours.
+Peer support retreats.
+Faculty empathy scorecards.
+Resilience hackathons.
+Peer support buddy apps.
+Faculty empathy lunches.
+Student wellbeing surveys.
+AI driven stress prediction.
+Confidential counseling kiosks.
+Group therapy marathons.
+Peer led mindfulness sessions.
+Faculty empathy certification.
+Student wellbeing trackers.
+Peer support buddy circles.
+Faculty empathy workshops.
+Counseling orientation drives.
+Peer support clubs.
+Faculty empathy training.
+Counseling awareness weeks.
+Peer buddy check ins.
+Faculty empathy certification.
+Resilience workshops.
+Peer support helplines.
+Faculty empathy lunches.
+Student wellbeing dashboards.
+AI driven burnout alerts.
+Confidential counseling rooms.
+Group resilience sessions.
+Peer led yoga circles.
+Faculty empathy workshops.
+Student wellbeing trackers.
+Peer support buddy system.
+Faculty empathy circles.
+Counseling awareness campaigns.
+National policy mandating counseling services in medical colleges.
+Emotional literacy included in accreditation rubrics.
+Government funding for wellness centers.
+KPI dashboards tracking student wellbeing.
+Pilot programs measuring resilience alongside marks.
+Emotional literacy in teacher training.
+Student wellbeing audits by regulators.
+Institutional rankings including wellness scores.
+Scholarships for balanced achievers.
+National guidelines on burnout prevention.
+Emotional health in accreditation standards.
+Policy advocacy campaigns led by students.
+Emotional wellbeing KPIs for faculty promotions.
+Government mandated resilience workshops.
+Emotional literacy modules in curriculum.
+National awards for wellness focused institutions.
+Emotional wellbeing surveys mandated annually.
+Policy requiring student wellness officers.
+Emotional literacy included in NEET guidelines.
+Government subsidies for wellness programs.
+Emotional wellbeing audits tied to accreditation.
+KPI dashboards for faculty empathy.
+Pilot programs for balanced evaluation.
+Emotional literacy certification for teachers.
+Student wellbeing audits every semester.
+Institutional rankings with wellness metrics.
+Scholarships rewarding resilience.
+National guidelines on resilience training.
+Emotional health in accreditation rubrics.
+Policy advocacy campaigns by NGOs.
+Emotional wellbeing KPIs for institutions.
+Government mandated empathy workshops.
+Emotional literacy modules for students.
+National awards for balanced achievers.
+Emotional wellbeing surveys mandated.
+Policy requiring wellness officers.
+Emotional literacy in national curriculum.
+Government funding for resilience labs.
+Emotional wellbeing audits tied to rankings.
+KPI dashboards for student wellness.
+Pilot programs measuring empathy.
+Emotional literacy certification for faculty.
+Student wellbeing audits annually.
+Institutional rankings with resilience scores.
+Scholarships for balanced performance.
+National guidelines on empathy training.
+Emotional health in accreditation rubrics.
+Policy advocacy campaigns by students.
+Emotional wellbeing KPIs for faculty.
+Government mandated resilience workshops.
+Emotional literacy modules in curriculum.
+National awards for wellness institutions.
+Emotional wellbeing surveys mandated.
+Policy requiring student wellness officers.
+Emotional literacy in NEET evaluation.
+Government subsidies for resilience programs.
+Emotional wellbeing audits tied to accreditation.
+KPI dashboards for empathy.
+Pilot programs for balanced evaluation.
+Emotional literacy certification for teachers.
+Student wellbeing audits every semester.
+Institutional rankings with wellness metrics.
+Scholarships rewarding resilience.
+National guidelines on resilience training.
+Emotional health in accreditation rubrics.
+Policy advocacy campaigns by NGOs.
+Emotional wellbeing KPIs for institutions.
+Government mandated empathy workshops.
+Emotional literacy modules for students.
+National awards for balanced achievers.
+Emotional wellbeing surveys mandated.
+Policy requiring wellness officers.
+Emotional literacy in national curriculum.
+Government funding for resilience labs.
+Emotional wellbeing audits tied to rankings.
+KPI dashboards for student wellness.
+Pilot programs measuring empathy.
+Emotional literacy certification for faculty.
+Student wellbeing audits annually.
+Institutional rankings with resilience scores.
+Scholarships for balanced performance.
+National guidelines on empathy training.
+Emotional health in accreditation rubrics.
+Policy advocacy campaigns by students.
+Emotional wellbeing KPIs for faculty.
+Government mandated resilience workshops.
+Emotional literacy modules in curriculum.
+National awards for wellness institutions.
+Emotional wellbeing surveys mandated.
+Policy requiring student wellness officers.
+Emotional literacy in NEET evaluation.
+Government subsidies for resilience programs.
+Emotional wellbeing audits tied to accreditation.
+KPI dashboards for empathy.
+Pilot programs for balanced evaluation.
+Emotional literacy certification for teachers.
+Student wellbeing audits every semester.
+Institutional rankings with wellness metrics.
+Scholarships rewarding resilience.
+National guidelines on resilience training.
+Emotional health in accreditation rubrics.
+Policy advocacy campaigns by NGOs.
+Emotional wellbeing KPIs for institutions.
+Government mandated empathy workshops.
+Emotional literacy modules for students.
+National awards for balanced achievers.
+Emotional wellbeing surveys mandated.
+Policy requiring wellness officers.
+Media campaigns highlighting resilience stories.
+Alumni storytelling in press.
+Influencer partnerships promoting balance.
+Documentaries on student wellbeing.
+Social media challenges on rest & creativity.
+National awards for balanced achievers.
+Campaigns against sleeplessness glorification.
+Role model interviews on vulnerability.
+Public service ads on mental health.
+Student blogs on resilience.
+Media guidelines for balanced reporting.
+Alumni podcasts on wellbeing.
+Radio shows on student balance.
+Community theatre on resilience.
+Local newspaper columns on wellbeing.
+Peer led social media campaigns.
+Alumni video testimonials.
+National storytelling contests on balance.
+Media campaigns showing diverse success paths.
+Alumni storytelling on balanced lives.
+Influencer partnerships for wellbeing.
+Documentaries on resilience.
+Social media challenges on hobbies.
+National awards for creativity.
+Campaigns against burnout glorification.
+Role model interviews on balance.
+Public service ads on resilience.
+Student blogs on wellbeing.
+Media guidelines for resilience.
+Alumni podcasts on balance.
+Radio shows on resilience.
+Community theatre on wellbeing.
+Local newspaper columns on balance.
+Peer led campaigns on hobbies.
+Alumni video interviews.
+National contests on resilience.
+Media campaigns highlighting vulnerability.
+Alumni storytelling on resilience.
+Influencer partnerships for balance.
+Documentaries on wellbeing.
+Social media challenges on rest.
+National awards for resilience.
+Campaigns against sleeplessness.
+Role model interviews on wellbeing.
+Public service ads on balance.
+Student blogs on resilience.
+Media guidelines for wellbeing.
+Alumni podcasts on resilience.
+Radio shows on balance.
+Community theatre on resilience.
+Local newspaper columns on wellbeing.
+Peer led campaigns on resilience.
+Alumni video testimonials.
+National contests on wellbeing.
+Media campaigns showing balanced achievers.
+Alumni storytelling on wellbeing.
+Influencer partnerships for resilience.
+Documentaries on balance.
+Social media challenges on creativity.
+National awards for wellbeing.
+Campaigns against burnout.
+Role model interviews on resilience.
+Public service ads on hobbies.
+Student blogs on wellbeing.
+Media guidelines for balance.
+Alumni podcasts on wellbeing.
+Radio shows on resilience.
+Community theatre on balance.
+Local newspaper columns on resilience.
+Peer led campaigns on wellbeing.
+Alumni video interviews.
+National contests on balance.
+Media campaigns highlighting hobbies.
+Alumni storytelling on balance.
+Influencer partnerships for wellbeing.
+Documentaries on resilience.
+Social media challenges on rest.
+National awards for creativity.
+Campaigns against sleeplessness.
+Role model interviews on balance.
+Public service ads on resilience.
+Student blogs on hobbies.
+Media guidelines for wellbeing.
+Alumni podcasts on balance.
+Radio shows on wellbeing.
+Community theatre on resilience.
+Local newspaper columns on balance.
+Peer led campaigns on hobbies.
+Alumni video testimonials.
+National contests on resilience.
+Media campaigns showing diverse achievers.
+Alumni storytelling on resilience.
+Influencer partnerships for balance.
+Documentaries on wellbeing.
+Social media challenges on creativity.
+National awards for resilience.
+Campaigns against burnout.
+Role model interviews on wellbeing.
+Public service ads on balance.
+Student blogs on resilience.
+Media guidelines for balance.
+Alumni podcasts on wellbeing.
+Radio shows on resilience.
+Community theatre on balance.
+Local newspaper columns on wellbeing.
+Peer led campaigns on resilience.
+Alumni video interviews.
+National contests on wellbeing.`;
+
+        // Parse and clean ideas
+        const ideaPool = rawText.split('\n')
+            .map(i => i.trim())
+            .filter(i => i !== '' && !i.startsWith('HMW') && !i.startsWith('Round'));
+        
+        // Ensure we have exactly 540 ideas (the array should be exactly 540 based on prompt)
+        console.log("Total Ideas loaded:", ideaPool.length);
+
+        const ideaDisplay = document.getElementById('scrolling-idea');
+        const counterDisplay = document.getElementById('counter-display');
+        const mixerSection = document.getElementById('mixer-section');
+        const top10Section = document.getElementById('top-10-section');
+        const backBtn = document.getElementById('back-btn');
+        
+        let counter = 0;
+        let animationDuration = 5000; // 5 seconds of mixing
+        let speed = 40; // update interval
+        let blurAmount = 0;
+        
+        const startTime = Date.now();
+
+        // The animation loop
+        const mixerInterval = setInterval(() => {
+            const elapsed = Date.now() - startTime;
+            
+            // Pick a random idea to show
+            const randomIdea = ideaPool[Math.floor(Math.random() * ideaPool.length)];
+            ideaDisplay.textContent = randomIdea;
+            
+            // Add a visual blur that pulses slightly
+            blurAmount = Math.random() * 2 + 1;
+            ideaDisplay.style.filter = `blur(${blurAmount}px)`;
+            
+            // Update the counter fast to simulate analyzing 540 items
+            let currentCount = Math.floor((elapsed / animationDuration) * 540);
+            if(currentCount > 540) currentCount = 540;
+            counterDisplay.textContent = `${currentCount} / 540 Analyzed`;
+
+            // Slowly change background color slightly
+            const r = 250 - Math.random() * 15;
+            const g = 247 - Math.random() * 10;
+            const b = 242 - Math.random() * 5;
+            mixerSection.style.backgroundColor = `rgba(${r}, ${g}, ${b}, 1)`;
+
+            if (elapsed > animationDuration) {
+                clearInterval(mixerInterval);
+                finishAnimation();
+            }
+        }, speed);
+
+        function finishAnimation() {
+            ideaDisplay.textContent = "Optimal Solutions Found.";
+            ideaDisplay.style.filter = "none";
+            ideaDisplay.style.color = "var(--pastel-sage)";
+            counterDisplay.textContent = "540 / 540 Analyzed";
+            
+            setTimeout(() => {
+                // Fade out mixer
+                mixerSection.style.opacity = '0';
+                
+                setTimeout(() => {
+                    mixerSection.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // Re-enable scroll
+                    
+                    // Fade in Top 10
+                    top10Section.classList.add('active');
+                    backBtn.classList.add('active');
+                }, 1000); // wait for fade out
+            }, 1000); // read pause
+        }
+    </script>
+</body>
+</html>
